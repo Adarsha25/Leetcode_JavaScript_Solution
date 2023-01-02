@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/binary-search/submissions/866954965/
+// https://leetcode.com/problems/binary-search/submissions/866954965/
 
 /**
  * @param {number[]} nums
