@@ -89,7 +89,38 @@ if (email || facebook || google) {    // '||' called as 'or' operator in which n
 // Show user a signout button if he is authenticated,
 // otherwise show option to login/ signup
 
-var authenticated = true;
+var authenticate = false;
+// Conditional (ternary) operator
+// condition ? val1 : val2
+// If condition is true, the operator has the value of val1. Otherwise it has the value of val2.
+// You can use the conditional operator anywhere you would use a standard operator.
+authenticate? console.log("SignOut button") : console.log("Login button");
+
+// expressions and operators  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
+
+
+// Switch
+
+var user = "admin";
+
+switch (user) {
+    case "admin":
+        console.log("You get full access");
+        break;
+    case "subadmin":
+        console.log("You can create or delete course");
+        break;
+    case "testprep":
+        console.log("You can create or delete tests");
+        break;
+    case "user":
+        console.log("You can consume content");
+        break;
+    default:
+        console.log("Trail user");
+
+        break;
+}
 
 
 
