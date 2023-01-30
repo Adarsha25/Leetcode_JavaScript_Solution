@@ -123,9 +123,147 @@ switch (user) {
 }
 
 
+/*  falsy values
+    undefined
+    null
+    0
+    ' '
+    NaN 
+    any variable refering to falsy value will be false*/
+
+var user = null;
+
+if (user) {
+    console.log("Hi there " + user)
+}
 
 
+// Basics of functions
+function sayHello(name) {
+    console.log(`Hello there, ${name}. How are you.`);
+}
+
+sayHello("Adarsha")
+
+// returning 
+
+function age() {
+    return "My age is 23.";
+}
+
+/*two ways of printing return value in the function 
+1. By assigning variable 
+2. By directly console the function*/
+
+var myAge = age // Functional programming
+console.log(myAge)
+
+console.log(age);
 
 
+// functions in variable
+
+function getUserRole(name, role){
+    switch(role){
+        case "admin":
+            return `${name} is admin with full access`;
+            break;  // While using the return, break is not necessary.
+        case "subadmin":
+            return `${name} is sub-admin with access to create and delete course`;
+            break;
+        case "testprep":
+            return `${name} is testprep with access to create and delete tests`;
+            break;
+            case "user":
+                return `${name} is a user to comsume content`;
+                break;
+        
+            default:
+                return `${name} is a trail user`;
+                break;
+
+    }
+    
+}
+
+console.log(getUserRole("Adarsha S", "admin"))
+
+// we can also make a variable as a function just by defining the var to function.
+var getUserRole = function (name, role){
+    switch(role){
+        case "admin":
+            return `${name} is admin with full access`;
+            break;
+        case "subadmin":
+            return `${name} is sub-admin with access to create and delete course`;
+            break;
+        case "testprep":
+            return `${name} is testprep with access to create and delete tests`;
+            break;
+            case "user":
+                return `${name} is a user to comsume content`;
+                break;
+        
+            default:
+                return `${name} is a trail user`;
+                break;
+
+    }
+    
+}
+var getrole = getUserRole("Suhas", "subadmin");
+console.log(getrole);
+
+
+/* context
+Execution Context handles the entire transformation and execution of the code.
+There are two types of execution contexts: global and function. 
+0The global execution context is created when a JavaScript script first starts to run, 
+and it represents the global scope in JavaScript.
+A function execution context is created whenever a function is called, 
+representing the function's local scope. */
+
+
+hello(); // The function hello() is executated even outside the function as Js will consider
+                // the function as golbal function 
+function hello(){
+    console.log("hey");
+}
+hello();
+
+// The two rule for Execution context
+// 1. function declarations are scanned and made available. 
+// 2. variable declarations are aslo scanned and made undefined.
+
+
+tipper(20)
+function tipper(a) {
+    var bill = parseInt(a); // parseInt takes number in string and converts into number for operation. 
+    console.log(bill + 5);
+}
+
+// bigTipper(200)  this will render an error as bigTipper is defined as variable and 
+// variables are are aslo scanned and made undefined.
+var bigTipper = function (a) {
+    var bill = parseInt(a); 
+    console.log(bill + 5);
+}
+bigTipper(200);
+// .
+// .
+// .
+// .
+console.log(name)
+var name = "Adarsha";
+// the value of the name will be stored undefined, not as error
+// but if the variable name is not defined then the result will be error 
+function sayName(){
+    var name = "Mr.Adi";
+    console.log(name);
+
+}
+sayName(); // prints the name as "Mr.Adi". As it is defined in function execution context.
+
+console.log(name); // prints the the name as "Adarsha". As is it is defined in global execution context. 
 
 
